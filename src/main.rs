@@ -2,20 +2,27 @@ use std::io;
 use rand::Rng;
 
 fn main() {
-    println!("Guess the number!");
-
-    let secret_number = rand::thread_rng().gen_range(1..101);
-
-    println!("The secret number is: {}", secret_number);
-
-    println!("Please input your guess.");
-
-    let mut guess = String::new();
-
+    speedrun();
+    println!("Run again? y/N");
+    let mut answer = String::new();
     io::stdin()
-        .read_line( &mut guess)
+        .read_line(&mut answer)
         .expect("Failed to read line");
 
-    println!("You guessed: {}", guess);
+    let answer = answer.trim();
+
+    if answer == "y" {
+        main();
+    }
 }
 
+fn speedrun() {
+    let mut num: i32 = 0;
+    let mut attempts: i32 = 0;
+
+    while num != 69420 {
+       num = rand::thread_rng().gen_range(10000..99999);
+       attempts = attempts+1;
+    }
+    println!("number, attempts: {}, {}", num, attempts);
+}
