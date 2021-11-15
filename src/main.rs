@@ -2,6 +2,7 @@ use std::io;
 use rand::Rng;
 
 fn main() {
+    //reads input of user chosen targeted value
     let mut target_num_answer = String::new();
     println!("What number would you like to speedrun?");
     io::stdin()
@@ -12,6 +13,7 @@ fn main() {
         .parse()
         .expect("Input is not an integer");
 
+    //reads input of user chosen start value
     let mut range_start_answer = String::new();
     println!("What should be the lowest number?");
     io::stdin()
@@ -22,6 +24,7 @@ fn main() {
         .parse()
         .expect("Input is not an integer");
 
+    //reads input of user chosen end value
     let mut range_end_answer = String::new();
     println!("What should be the highest number?");
     io::stdin()
@@ -39,7 +42,7 @@ fn speedrun(target_num: i32, range_start: i32, range_end: i32) {
     let mut num: i32 = 0;
     let mut attempts: i32 = 0;
 
-    //
+    //generates a random number between the start and end values until it hits the targeted value
     while num != target_num {
        num = rand::thread_rng().gen_range(range_start..range_end);
        attempts = attempts+1;
