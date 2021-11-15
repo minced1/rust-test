@@ -6,3 +6,4 @@ Have fun beating your and your friends high scores.
 ### TODO
 - [x] Change hard coded values to soft coded ones
 - [ ] Add validation for values
+- [ ] Add possibility to store and sort values from one session
