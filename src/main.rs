@@ -55,7 +55,6 @@ fn speedrun(target_num: i32, range_start: i32, range_end: i32) {
     io::stdin()
         .read_line(&mut answer)
         .expect("Failed to read line");
-
     let answer = answer.trim();
 
     if answer == "y" {
