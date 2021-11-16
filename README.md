@@ -5,8 +5,8 @@ Have fun beating your and your friends high scores.
 
 ## Usage
 On Linux download the [latest release](https://github.com/minced1/speedrun-number/releases) and run `./speedrun-number`. <br>
-_Windows usage coming soon_<br>
-_macOS usage coming perhaps_<br>
+_Windows usage coming soon._<br>
+_macOS usage coming perhaps._<br>
 You will get asked three questions. Answer them by typing any integer value and pressing Enter.
 
 ## Dependencies
@@ -18,8 +18,8 @@ When built with cargo, the dependencies are automaticly pulled from [crates.io](
 
 ## Compiling
 ### Install build tools
-On Linux and macOS run `curl https://sh.rustup.rs -sSf | sh` in the command line<br>
-On Windows download and run [rustup-init.exe](https://win.rustup.rs)
+On Linux and macOS run `curl https://sh.rustup.rs -sSf | sh` in the command line.<br>
+On Windows download and run [rustup-init.exe](https://win.rustup.rs).
 
 ### Build code
 In the local repository run 
