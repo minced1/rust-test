@@ -1,7 +1,27 @@
 use std::io;
+use std::string::String;
 use rand::Rng;
 
 fn main() {
+    let mut input = String::new();
+    println!("game          - start the game");
+    println!("stats         - view stats of last game");
+    println!("stats save    - save stats in local file");
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line");
+    let input = input.trim();
+    
+    match &*input {
+        "game" => game_start(),
+        "stats" => stat_temp(),
+        "stats save" => stat_perm(),
+        _ => main(),
+    }
+
+}
+
+fn game_start() {
     //reads input of user chosen targeted value
     let mut target_num_answer = String::new();
     println!("What number would you like to speedrun?");
@@ -35,11 +55,22 @@ fn main() {
         .parse()
         .expect("Input is not an integer");
 
+    //validates that target value is in range of range_start and range_end
     if target_num_answer > range_start_answer && target_num_answer < range_end_answer {
         speedrun(target_num_answer, range_start_answer, range_end_answer);
     } else {
         println!("Please choose a number, that is higher than the lowest number and lower than the highest number.");
     }
+}
+
+fn stat_temp() {
+    println!("stats");
+    main();
+}
+
+fn stat_perm() {
+    println!("stats saved");
+    main();
 }
 
 fn speedrun(target_num: i32, range_start: i32, range_end: i32) {
@@ -63,5 +94,7 @@ fn speedrun(target_num: i32, range_start: i32, range_end: i32) {
 
     if answer == "y" {
         speedrun(target_num, range_start, range_end);
+    } else {
+        main();
     }
 }
