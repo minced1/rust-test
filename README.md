@@ -32,5 +32,5 @@ Your binary will be in `LOCATION_OF_REPOSITORY/speedrun-number/target/debug/`.
 
 ## TODO
 - [x] Change hard coded values to soft coded ones
-- [ ] Add validation for values
+- [X] Add validation for values
 - [ ] Add possibility to store and sort values from one session
