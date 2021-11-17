@@ -35,7 +35,11 @@ fn main() {
         .parse()
         .expect("Input is not an integer");
 
-    speedrun(target_num_answer, range_start_answer, range_end_answer)
+    if target_num_answer > range_start_answer && target_num_answer < range_end_answer {
+        speedrun(target_num_answer, range_start_answer, range_end_answer);
+    } else {
+        println!("Please choose a number, that is higher than the lowest number and lower than the highest number.");
+    }
 }
 
 fn speedrun(target_num: i32, range_start: i32, range_end: i32) {
