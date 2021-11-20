@@ -1,6 +1,7 @@
 use rand::Rng;
 use std::io;
 use std::string::String;
+use std::process;
 
 fn main() {
     game_setup()
@@ -70,6 +71,6 @@ fn speedrun(target_num: i32, range_start: i32, range_end: i32) {
     if answer == "y" {
         speedrun(target_num, range_start, range_end);
     } else {
-        game_setup();
+        process::exit(1)
     }
 }
