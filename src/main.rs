@@ -1,27 +1,12 @@
+use rand::Rng;
 use std::io;
 use std::string::String;
-use rand::Rng;
 
 fn main() {
-    let mut input = String::new();
-    println!("game          - start the game");
-    println!("stats         - view stats of last game");
-    println!("stats save    - save stats in local file");
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read line");
-    let input = input.trim();
-    
-    match &*input {
-        "game" => game_start(),
-        "stats" => stat_temp(),
-        "stats save" => stat_perm(),
-        _ => main(),
-    }
-
+    game_setup()
 }
 
-fn game_start() {
+fn game_setup() {
     //reads input of user chosen targeted value
     let mut target_num_answer = String::new();
     println!("What number would you like to speedrun?");
@@ -63,29 +48,19 @@ fn game_start() {
     }
 }
 
-fn stat_temp() {
-    println!("stats");
-    main();
-}
-
-fn stat_perm() {
-    println!("stats saved");
-    main();
-}
-
 fn speedrun(target_num: i32, range_start: i32, range_end: i32) {
     let mut num: i32 = 0;
     let mut attempts: i32 = 0;
 
     //generates a random number between the start and end values until it hits the targeted value
     while num != target_num {
-       num = rand::thread_rng().gen_range(range_start..range_end);
-       attempts = attempts+1;
+        num = rand::thread_rng().gen_range(range_start..range_end);
+        attempts += 1;
     }
     println!("number, attempts: {}, {}", num, attempts);
 
     //If user types in "y" the script calls itself with the same values
-    println!("Run again? y/N");
+    println!("Run again? [y/N]: ");
     let mut answer = String::new();
     io::stdin()
         .read_line(&mut answer)
@@ -95,6 +70,6 @@ fn speedrun(target_num: i32, range_start: i32, range_end: i32) {
     if answer == "y" {
         speedrun(target_num, range_start, range_end);
     } else {
-        main();
+        game_setup();
     }
 }
