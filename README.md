@@ -6,7 +6,7 @@ Have fun beating your and your friends high scores.
 ## Usage
 On Linux download the [latest release](https://github.com/minced1/speedrun-number/releases) and run `./speedrun-number`. <br>
 _Windows release not planned._<br>
-_macOS usage not planned._<br>
+_macOS release not planned._<br>
 You will get asked three questions. Answer them by typing any integer value and pressing Enter.
 
 ## Dependencies
